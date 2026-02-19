@@ -2,7 +2,7 @@ name: Update calendar.ics
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # 03:00 UTC todos los días
+    - cron: "0 */6 * * *"
   workflow_dispatch:
 
 permissions:
