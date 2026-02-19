@@ -1,0 +1,33 @@
+name: Update calendar.ics
+
+on:
+  schedule:
+    - cron: "0 3 * * *"   # 03:00 UTC todos los días
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install deps
+        run: pip install requests
+
+      - name: Generate calendar
+        run: python generate_calendar.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "calendar-bot"
+          git config user.email "calendar-bot@users.noreply.github.com"
+          git add calendar.ics
+          git commit -m "Update calendar.ics" || echo "No changes"
+          git push
