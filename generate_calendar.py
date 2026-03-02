@@ -3,6 +3,7 @@ import hashlib
 import html
 import re
 import requests
+import sys
 from zoneinfo import ZoneInfo
 
 ENDPOINT = "https://locosdewallstreet.com/wp-admin/admin-ajax.php"
@@ -70,9 +71,39 @@ def fetch_month(y: int, m: int):
     }
 
     r = requests.post(ENDPOINT, data=payload, headers=headers, timeout=30)
-    r.raise_for_status()
-    j = r.json()
-    return j.get("data", {}).get("eventos", {})
+
+    # Si algo raro, no rompas
+    if r.status_code != 200:
+        print(f"[WARN] HTTP {r.status_code} {y}-{m:02d} -> devolviendo vacío")
+        return {}
+
+    try:
+        j = r.json()
+    except Exception as e:
+        print(f"[WARN] No es JSON {y}-{m:02d}: {e} -> devolviendo vacío")
+        return {}
+
+    eventos = j.get("data", {}).get("eventos", {})
+
+    # ✅ Normalizar formato
+    # Caso normal: dict {"YYYY-MM-DD":[...], ...}
+    if isinstance(eventos, dict):
+        return eventos
+
+    # Caso raro: lista de eventos [{fecha:"YYYY-MM-DD", ...}, ...] o []
+    if isinstance(eventos, list):
+        out = {}
+        for ev in eventos:
+            if not isinstance(ev, dict):
+                continue
+            date_str = ev.get("fecha") or ev.get("date")
+            if not date_str:
+                continue
+            out.setdefault(date_str, []).append(ev)
+        return out
+
+    # Cualquier otra cosa, vacío
+    return {}
 
 # --- ICS escaping / folding ---
 def ics_escape(s: str) -> str:
@@ -126,6 +157,10 @@ for idx in range(start_idx, end_idx + 1):
             })
 
 print(f"Eventos capturados: {len(all_events)}")
+
+if len(all_events) == 0:
+    print("[WARN] 0 eventos capturados. No se actualiza calendar.ics para evitar publicar un ICS vacío.")
+    sys.exit(0)
 
 dtstamp = datetime.datetime.now(datetime.UTC).strftime("%Y%m%dT%H%M%SZ")
 
@@ -192,3 +227,4 @@ with open("calendar.ics", "w", encoding="utf-8", newline="") as f:
     f.write("\r\n".join(lines) + "\r\n")
 
 print("Archivo generado: calendar.ics")
+
