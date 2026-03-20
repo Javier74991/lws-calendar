@@ -1,6 +1,8 @@
 import datetime
 import hashlib
 import html
+import json
+import os
 import re
 import requests
 import sys
@@ -15,6 +17,9 @@ START_MONTH = 1
 
 # Zona local de los horarios que entrega la web
 LOCAL_TZ = ZoneInfo("Europe/Madrid")
+
+# Archivo JSON para artículos detectados
+ARTICLES_JSON = "articles.json"
 
 # --- helpers de meses ---
 def month_add(year: int, month: int, add: int):
@@ -60,7 +65,7 @@ def fetch_month(y: int, m: int):
         "mes": str(m),
         "ano": str(y),
         "lang": LANG,
-        "_cb": str(int(datetime.datetime.now(datetime.UTC).timestamp())),  # anti-caché
+        "_cb": str(int(datetime.datetime.now(datetime.UTC).timestamp())),
     }
 
     headers = {
@@ -72,7 +77,6 @@ def fetch_month(y: int, m: int):
 
     r = requests.post(ENDPOINT, data=payload, headers=headers, timeout=30)
 
-    # Si algo raro, no rompas
     if r.status_code != 200:
         print(f"[WARN] HTTP {r.status_code} {y}-{m:02d} -> devolviendo vacío")
         return {}
@@ -85,12 +89,9 @@ def fetch_month(y: int, m: int):
 
     eventos = j.get("data", {}).get("eventos", {})
 
-    # ✅ Normalizar formato
-    # Caso normal: dict {"YYYY-MM-DD":[...], ...}
     if isinstance(eventos, dict):
         return eventos
 
-    # Caso raro: lista de eventos [{fecha:"YYYY-MM-DD", ...}, ...] o []
     if isinstance(eventos, list):
         out = {}
         for ev in eventos:
@@ -102,8 +103,65 @@ def fetch_month(y: int, m: int):
             out.setdefault(date_str, []).append(ev)
         return out
 
-    # Cualquier otra cosa, vacío
     return {}
+
+# --- JSON artículos ---
+def load_articles():
+    if not os.path.exists(ARTICLES_JSON):
+        return {"articles": []}
+
+    try:
+        with open(ARTICLES_JSON, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            if not isinstance(data, dict) or "articles" not in data:
+                return {"articles": []}
+            if not isinstance(data["articles"], list):
+                return {"articles": []}
+            return data
+    except Exception as e:
+        print(f"[WARN] No se pudo leer {ARTICLES_JSON}: {e}")
+        return {"articles": []}
+
+def save_articles(data):
+    with open(ARTICLES_JSON, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+
+def add_articles_if_missing(events):
+    data = load_articles()
+    existing_urls = {
+        (article.get("url") or "").strip()
+        for article in data["articles"]
+        if (article.get("url") or "").strip()
+    }
+
+    added = 0
+
+    for ev in events:
+        url = (ev.get("url") or "").strip()
+        if not url or url == "#":
+            continue
+
+        if url in existing_urls:
+            continue
+
+        data["articles"].append({
+            "url": url,
+            "title": ev.get("title", "").strip(),
+            "date": ev.get("date", "").strip(),
+            "hora": ev.get("hora", "").strip(),
+            "tipo": ev.get("tipo", "").strip(),
+            "date_detected": datetime.datetime.now(datetime.UTC).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "processed": False,
+            "audio_url": None,
+            "audio_downloaded": False,
+            "last_error": None
+        })
+
+        existing_urls.add(url)
+        added += 1
+
+    save_articles(data)
+    print(f"Artículos nuevos añadidos al JSON: {added}")
 
 # --- ICS escaping / folding ---
 def ics_escape(s: str) -> str:
@@ -162,6 +220,9 @@ if len(all_events) == 0:
     print("[WARN] 0 eventos capturados. No se actualiza calendar.ics para evitar publicar un ICS vacío.")
     sys.exit(0)
 
+# --- actualizar JSON de artículos ---
+add_articles_if_missing(all_events)
+
 dtstamp = datetime.datetime.now(datetime.UTC).strftime("%Y%m%dT%H%M%SZ")
 
 lines = [
@@ -198,22 +259,18 @@ for ev in sorted(all_events, key=lambda x: (x["date"], x["title"], x["hora"])):
         sh, sm = map(int, start.split(":"))
         eh, em = map(int, end.split(":"))
 
-        # Crear datetime local (Europe/Madrid)
         dt_start_local = datetime.datetime(y, m, d, sh, sm, tzinfo=LOCAL_TZ)
         dt_end_local = datetime.datetime(y, m, d, eh, em, tzinfo=LOCAL_TZ)
 
-        # FIX: duración 0/negativa -> +30 min
         if dt_end_local <= dt_start_local:
             dt_end_local = dt_start_local + datetime.timedelta(minutes=30)
 
-        # Convertir a UTC y escribir con Z (formato más compatible con Google)
         dt_start_utc = dt_start_local.astimezone(datetime.UTC)
         dt_end_utc = dt_end_local.astimezone(datetime.UTC)
 
         lines.append(f"DTSTART:{dt_start_utc.strftime('%Y%m%dT%H%M%SZ')}")
         lines.append(f"DTEND:{dt_end_utc.strftime('%Y%m%dT%H%M%SZ')}")
     else:
-        # Todo el día
         dtstart = datetime.date(y, m, d).strftime("%Y%m%d")
         dtend = (datetime.date(y, m, d) + datetime.timedelta(days=1)).strftime("%Y%m%d")
         lines.append(f"DTSTART;VALUE=DATE:{dtstart}")
@@ -227,4 +284,4 @@ with open("calendar.ics", "w", encoding="utf-8", newline="") as f:
     f.write("\r\n".join(lines) + "\r\n")
 
 print("Archivo generado: calendar.ics")
-
+print(f"Archivo actualizado: {ARTICLES_JSON}")
