@@ -154,6 +154,9 @@ def add_articles_if_missing(events):
             "processed": False,
             "audio_url": None,
             "audio_downloaded": False,
+            "video_url": None,
+            "video_downloaded": False,
+            "content_type": None,
             "last_error": None
         })
 
