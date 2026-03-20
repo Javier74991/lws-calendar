@@ -704,6 +704,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/analisis-naspers/",
+      "title": "Análisis – Naspers",
+      "date": "2026-03-20",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-03-20T19:50:26Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
