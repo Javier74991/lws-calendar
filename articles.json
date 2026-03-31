@@ -809,6 +809,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/tesis-de-inversion-fila/",
+      "title": "Tesis de Inversión – FILA",
+      "date": "2026-03-31",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-03-31T18:56:48Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
