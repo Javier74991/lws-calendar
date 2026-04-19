@@ -959,6 +959,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/cartera-2026-04-07-3/",
+      "title": "19 Abril, 2026",
+      "date": "2026-04-19",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen de Cartera",
+      "date_detected": "2026-04-19T12:53:54Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
