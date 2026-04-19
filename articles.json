@@ -944,6 +944,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/resumen-semanal-2026-04-07-3/",
+      "title": "Teatro Kabuki – Resumen Semanal 19 Abril 2026",
+      "date": "2026-04-19",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen Semanal",
+      "date_detected": "2026-04-19T02:13:35Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
