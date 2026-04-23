@@ -1004,6 +1004,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/directo-suscriptores-new-princes-carrefour/",
+      "title": "Directo Suscriptores – New Princes + Carrefour",
+      "date": "2026-04-22",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-04-23T19:02:34Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
