@@ -1064,6 +1064,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/directo-suscriptores-qa-28-abril/",
+      "title": "Directo Suscriptores + Q&A – 28 Abril",
+      "date": "2026-04-28",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-04-29T08:09:35Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
