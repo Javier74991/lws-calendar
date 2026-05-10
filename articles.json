@@ -1154,6 +1154,36 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/resumen-semanal-2026-05-08/",
+      "title": "El día de la marmota – Resumen semanal 10 de mayo, 2026",
+      "date": "2026-05-10",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen Semanal",
+      "date_detected": "2026-05-10T13:08:58Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/cartera-2026-05-08/",
+      "title": "10 mayo, 2026",
+      "date": "2026-05-10",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen de Cartera",
+      "date_detected": "2026-05-10T13:08:58Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
