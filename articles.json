@@ -1229,6 +1229,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/resultados-q1-2026-new-princes/",
+      "title": "Resultados Q1 2026 – New Princes",
+      "date": "2026-05-18",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-05-18T19:40:19Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
