@@ -1244,6 +1244,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/resultados-q1-2026-semapa/",
+      "title": "Resultados Q1 2026 – Semapa",
+      "date": "2026-05-20",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-05-20T20:08:46Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
