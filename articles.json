@@ -1274,6 +1274,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/directo-suscriptores-19-05-qa-mr-kamikaze/",
+      "title": "Directo Suscriptores + Q&A – Mr Kamikaze 19 Mayo",
+      "date": "2026-05-19",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-05-21T19:48:00Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
