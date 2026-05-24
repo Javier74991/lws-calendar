@@ -1319,6 +1319,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/cartera-2026-05-21-2/",
+      "title": "24 Mayo, 2026",
+      "date": "2026-05-24",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen de Cartera",
+      "date_detected": "2026-05-24T13:16:47Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
