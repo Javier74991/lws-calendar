@@ -1379,6 +1379,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/resultados-q1-2026-gci-liberty/",
+      "title": "Análisis – GCI Liberty y SpaceX",
+      "date": "2026-05-28",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-05-28T15:41:17Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
