@@ -1424,6 +1424,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/tesis-de-inversion-whitecap-resources-wcp/",
+      "title": "Tesis de Inversión – Whitecap Resources WCP",
+      "date": "2026-06-01",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-06-01T17:29:48Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
