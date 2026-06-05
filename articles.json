@@ -1439,6 +1439,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/analisis-contratos-y-subsidios-gci-liberty/",
+      "title": "Análisis Contratos y Subsidios – GCI Liberty",
+      "date": "2026-06-05",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-06-05T19:48:14Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
