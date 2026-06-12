@@ -1514,6 +1514,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/analisis-factset/",
+      "title": "Análisis – Factset",
+      "date": "2026-06-12",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-06-12T10:03:40Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
