@@ -1589,6 +1589,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/cake-box-una-micro-cap-poco-glamurosa-una-tesis-muy-seria/",
+      "title": "Cake Box – Una franquicia silenciosa en el corazón del Reino Unido",
+      "date": "2026-06-18",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-06-18T14:57:53Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
