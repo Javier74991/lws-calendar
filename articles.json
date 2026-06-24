@@ -1634,6 +1634,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/tesis-de-inversion-bmv-deterioro-estructural-o-temporal/",
+      "title": "Tesis de Inversión BMW – ¿Deterioro estructural o temporal?",
+      "date": "2026-06-24",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-06-24T14:21:28Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
