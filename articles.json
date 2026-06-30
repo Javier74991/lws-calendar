@@ -1679,6 +1679,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/directo-suscriptores-qa-albert-millan/",
+      "title": "Directo Suscriptores + Q&A – Albert Millán",
+      "date": "2026-06-29",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-06-30T09:25:58Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
