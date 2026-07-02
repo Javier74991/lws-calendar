@@ -1709,6 +1709,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/watchtlist-julio-2026-mrkamikaze/",
+      "title": "Watchtlist Julio 2026 – MrKamikaze",
+      "date": "2026-07-02",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-07-02T19:17:57Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
