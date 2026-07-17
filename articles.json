@@ -1844,6 +1844,21 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/tesis-sed-energy-dividendo-del-17-y-opcionalidad-gratis-en-el-fondo-del-ciclo/",
+      "title": "Tesis SED Energy – Dividendo del 17% y Opcionalidad Gratis en el Fondo del Ciclo",
+      "date": "2026-07-17",
+      "hora": "",
+      "tipo": "",
+      "date_detected": "2026-07-17T19:00:36Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
