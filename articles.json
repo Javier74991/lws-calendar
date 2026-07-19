@@ -1859,6 +1859,36 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/resumen-semanal-2026-07-01-4/",
+      "title": "Margin call en Corea – Resumen Semanal 19 Julio 2026",
+      "date": "2026-07-19",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen Semanal",
+      "date_detected": "2026-07-19T13:06:47Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/cartera-2026-07-01-4/",
+      "title": "19 Julio, 2026",
+      "date": "2026-07-19",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen de Cartera",
+      "date_detected": "2026-07-19T13:06:47Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
