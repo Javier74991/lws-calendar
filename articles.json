@@ -1979,6 +1979,36 @@
       "video_downloaded": false,
       "content_type": null,
       "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/resumen-semanal-2026-07-29/",
+      "title": "Rezando a los dioses del clima – Resumen Semanal 2 Agosto 2026",
+      "date": "2026-08-02",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen Semanal",
+      "date_detected": "2026-08-02T13:10:39Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
+    },
+    {
+      "url": "https://locosdewallstreet.com/financial-research/fr_posts/cartera-2026-07-29/",
+      "title": "2 Agosto, 2026",
+      "date": "2026-08-02",
+      "hora": "09:30-10:00",
+      "tipo": "Resumen de Cartera",
+      "date_detected": "2026-08-02T13:10:39Z",
+      "processed": false,
+      "audio_url": null,
+      "audio_downloaded": false,
+      "video_url": null,
+      "video_downloaded": false,
+      "content_type": null,
+      "last_error": null
     }
   ]
 }
